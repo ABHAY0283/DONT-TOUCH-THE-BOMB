@@ -134,6 +134,12 @@ def main():
 			drawHelper.frame(screen)
 
 			#title
+			title_shadow = font.render("DONT TOUCN THE BOMB", True, pygame.Color(50,50,50))
+			title_size_x = 578
+			title_size_y = 49
+			title_shadow = pygame.transform.smoothscale(title_shadow, (title_size_x // 5,title_size_y // 5))
+			title_shadow = pygame.transform.smoothscale(title_shadow, (title_size_x, title_size_y))
+			screen.blit(title_shadow, (155,60))
 			title = font.render("DONT TOUCH THE BOMB", True, pygame.Color('black'))
 			screen.blit(title, (145,50))
 			button1.draw(screen)
