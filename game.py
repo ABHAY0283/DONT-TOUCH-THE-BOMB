@@ -104,6 +104,11 @@ def main():
 
 	player = Player()
 
+	pygame.mixer.init()
+	pygame.mixer.music.set_volume(0.5)
+	pygame.mixer.music.load(os.path.join('data','music','titlescreen_final.ogg'))
+	pygame.mixer.music.play(-1)
+
 	# main loop
 	while running:
 		for event in pygame.event.get():
