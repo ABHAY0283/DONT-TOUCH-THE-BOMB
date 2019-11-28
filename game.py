@@ -45,12 +45,12 @@ class drawHelper:
 				screen.blit(images['sky'], (grid(x,y)))
 
 
-class Player:
-	def __init__(self):
+class Player(pygame.sprite.Sprite):
+	def __init__(self, pos = grid(1,1)):
 		self.speed = 8
 		self.xspeed = 0
 		self.yspeed = 0
-		self.rect = images['player'].get_rect(midbottom=(width//2, height - 100))
+		self.rect = images['player'].get_rect(topleft=pos)
 
 	def event(self):
 		keys = pygame.key.get_pressed()
@@ -102,7 +102,7 @@ def main():
 
 	clock = pygame.time.Clock()
 
-	player = Player()
+	player = Player(grid(2,2))
 
 	pygame.mixer.init()
 	pygame.mixer.music.set_volume(0.5)
